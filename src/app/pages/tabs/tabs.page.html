@@ -1,0 +1,25 @@
+<ion-tabs (ionTabsWillChange)="handleSelect($event)">
+
+  <ion-tab-bar slot="bottom" translucent [class.transport]="tabIndex === 'home'">
+    <ion-tab-button tab="home">
+      <ion-label>首页</ion-label>
+    </ion-tab-button>
+
+    <ion-tab-button tab="follow">
+      <ion-label>关注</ion-label>
+    </ion-tab-button>
+
+    <ion-tab-button>
+      <ion-icon class="add-btn" name="add"></ion-icon>
+    </ion-tab-button>
+
+    <ion-tab-button tab="message">
+      <ion-label>消息</ion-label>
+    </ion-tab-button>
+
+    <ion-tab-button tab="profile">
+      <ion-label>我</ion-label>
+    </ion-tab-button>
+  </ion-tab-bar>
+
+</ion-tabs>
