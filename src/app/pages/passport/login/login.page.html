@@ -1,0 +1,53 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-icon name="close" (click)="handleClose()"></ion-icon>
+    </ion-buttons>
+    <ion-buttons slot="end">
+      <ion-text class="go-password">密码登录</ion-text>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <h3 class="form-title">手机登录有助于您快速找到好友</h3>
+  <form
+   class="form-wrap" 
+   [formGroup]="loginForm"
+    novalidate>
+    <ul>
+      <li>
+        <ion-label class="phone-area">
+          +86
+          <ion-icon name="arrow-dropdown" mode="md"></ion-icon>
+        </ion-label>
+        <ion-input
+          placeholder="输入手机号"
+          required
+          formControlName="phone"
+          pattern="1[345789]\d{9}"
+          clearInput
+        ></ion-input>
+      </li>
+      <li>
+        <ion-input
+          pattern="\d{4}"
+          maxLength="4"
+          required
+          placeholder="输入验证码"
+          clearInput
+          formControlName="captcha"
+        ></ion-input>
+        <ion-button class="capcode" [disabled]="!phone.valid">获取验证码</ion-button>
+      </li>
+      <li class="form-tips">
+        <p>登录即表明同意 <span>用户协议</span> 和 <span>隐私政策</span> ，请仔细阅读</p>
+      </li>
+      <li>
+          <ion-button class="submit" slots="icon-only" [disabled]="!loginForm.valid" (click)="onSubmit()">
+              <ion-icon name="checkmark-circle"></ion-icon>
+          </ion-button>
+        </li>
+    </ul>
+  </form>
+</ion-content>
