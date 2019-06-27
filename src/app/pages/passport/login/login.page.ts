@@ -21,7 +21,7 @@ export class LoginPage implements OnInit {
   ) {
     this.loginForm = fb.group({
       phone: [''],
-      capcode: ['']
+      captcha: ['']
     });
    }
 
@@ -30,8 +30,8 @@ export class LoginPage implements OnInit {
 
   onSubmit() {
     if (this.loginForm.valid) {
-      const { phone, capcode } = this.loginForm.value;
-      console.log(phone, capcode);
+      const { phone, captcha } = this.loginForm.value;
+      console.log(phone, captcha);
     }
   }
 
